@@ -1,0 +1,18 @@
+#!/bin/bash
+
+usernotallowed =  "root"
+
+tcpdump -i any port 22 >> logssh-$(date +%F-%T).txt
+
+tcpdump -i any port 22 | awk '{ print $5}' >> loggshhIps-$(date +%F-%T).txt
+
+ipaddress = tcpdump -i any port 22 | awk '{ print $5}'
+
+if [ "$ipaddress" = "$usernotallowed"]; then
+	echo $usernotallowed "Has tried/connected to the server" >> usernotallowedlog.txt
+fi
+
+users | grep root && echo "root loging detected"-$(date +%F-%T) >> RedFlaglog.txt
+ 
+
+

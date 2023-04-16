@@ -1,0 +1,5 @@
+#!/bin/bash
+
+inotifywait -e modify,create,delete -r /var/log && echo "There have been changes to the directory /var/log"-$(date +%F-%T) >> ChangesToDir.txt
+
+inotifywait -e modify,create,delete -r /etc/ && echo "There have been changes to the directory /etc/"-$(date +%F-%T) >> ChangesToDir.txt

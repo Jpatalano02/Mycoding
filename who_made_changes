@@ -1,0 +1,18 @@
+#!/bin/bash
+
+stat /. > dotstat.txt
+ls /. -lrt > dotchanges.txt
+
+stat .bash_history > bashhistorystat.txt
+ls .bash_history -lrt > bashhistorychanges.txt
+
+stat .bash_logout > bashlogoutstat.txt
+ls .bash_logout -lrt > bashlogoutchanges.txt
+
+stat .config > configstat.txt
+ls .config -lrt > configchanges.txt
+
+stat /usr/bin > executesrootstat.txt
+ls /usr/bin > executesrootchanges.txt
+
+
