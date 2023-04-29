@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tar -zcvf Dir-Backup.tar.gz /*
+
+echo "Directories have been backedupped"
+
+
